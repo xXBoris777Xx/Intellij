@@ -1,0 +1,24 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: Herramientas-Matutuino
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/HerramientasM
+    username: postgres
+    password: 2512
+    driver-class-name: org.postgresql.Driver
+
+  # Configuración de migración
+  flyway:
+    enabled: true
+    baseline-version: 1
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+    sql-migration-suffixes: .sql
+    sql-migration-prefix: V
+    schemas: public
